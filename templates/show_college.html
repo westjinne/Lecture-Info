@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title> College Info </title>
+    <meta charset="utf-8">
+    <link rel = "stylesheet" type="text/css" href = '{{url_for('static', filename = 'style.css')}}'>
+  </head>
+  <body>
+    <div class = "main bar">
+      <h1>This is body's h1!</h1>
+    </div>
+
+    <p>
+      this is main html
+    </p>
+    
+    {% for col in name %}
+    <div class = "college list">
+      <b> {{col.name}} </b> </br>
+    </div>
+    {% endfor %}
+    
+    <div>
+        <button type="button" onclick="window.location.href='{{ url_for( 'showMain' , table='Y' ) }}';" class = "button">Go To Main</button>
+      </div>
+
+  </body>
+</html>

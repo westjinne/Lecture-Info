@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title> Create College </title>
+    <meta charset="utf-8">
+    <link rel = "stylesheet" type="text/css" href = '{{url_for('static', filename = 'style.css')}}'>
+  </head>
+  <body>
+    <div class = "main bar">
+      <h1>Lecture Info Application - Edit College </h1>
+    </div>
+    <div class = "add bar">
+      <h2> Edit College {{editedCollege.name}} </h2>
+      <hr>
+    </div>
+    <div class = "container">
+      <div class = "info">
+        <form action = "{{url_for('createCollege')}}" method = 'POST'>
+          <p> Name </p>
+          <input type = 'text' style = 'height: 30px; width: 300px;' name = 'name'> </p>
+      </div>
+      <div>
+        <input type = 'submit' value = 'Create' class = "button">
+        <button type="button" onclick="window.location.href='{{ url_for( 'showMain' , table='Y' ) }}';" class = "button">Cancel</button>
+      </div>
+    </div>
+
+    {% for col in name %}
+    <div class = "precollege list">
+      {{col.name}}</br>
+    </div>
+    {% endfor %}
+
+  </body>
+</html>
